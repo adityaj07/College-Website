@@ -1,11 +1,31 @@
 <?php
 $insert = false;
+if($_SERVER["REQUEST_METHOD"] == "POST"{
+    $usename = $_POST["name"];
+    $useremail = $_POST["email"];
+    $password = $_POST["password"];
+    $confirmpassword = $_POST["password"];
+    
+    if(empty($usename)){
+        die("Please enter your name!");
+    }
+    if(empty($useremail )){
+        die("Please enter your email!");
+    }
+    if(empty($password )){
+        die("Password cannot be blank!");
+    }
+    if(empty($confirmpassword )){
+        die("Confirm Password field cannot be blank!");
+    }
+}   
 if(isset($_POST['name'])){
     // Set connection variables
     $server = "localhost";
     $username = "root";
     $password = "";
-
+    
+    
     // Create a database connection
     $con = mysqli_connect($server, $username, $password);
 
