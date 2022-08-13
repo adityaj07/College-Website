@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+.nav-container {
+  background: rgb(20, 20, 20);
+  width: 100%;
+}
+
+.nav-container::before {
+  content: "";
+  background: url("img/tcet1.jpeg") center center/cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 104%;
+  z-index: -1;
+  opacity: 1;
+  filter: brightness(40%);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  align-items: center;
+  width: 90%;
+  max-width: 1720px;
+  margin: 0 auto;
+}
+
+#navbar-logo {
+  color: white;
+  justify-self: left;
+  margin-left: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#navbar-logo:hover {
+  color: #f9423d;
+  transition: all 0.3s ease-in-out;
+}
+
+#tcet-logo {
+  margin: -14px 12px;
+}
+
+.heading-link {
+  color: white;
+  justify-self: left;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+}
+
+.heading-link:hover {
+  color: #f9423d;
+  transition: all 0.3s ease-in-out;
+}
+
+.heading-link {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style-type: none;
+  justify-self: end;
+}
+
+.nav-links {
+  text-decoration: none;
+  color: #fff;
+  padding: 4px 6px;
+  margin: 0 10px;
+  transition: all 0.2s ease-in;
+}
+
+.nav-links:hover {
+  color: #f9423d;
+  transition: all 0.2s ease-in;
+}
+
+.nav-links-btn {
+  background-color: #f9423d;
+  padding: 6px 16px;
+  border-radius: 6px;
+  transition: all 0.3s ease-out;
+}
+
+.nav-links-btn:hover {
+  background-color: transparent;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 6px;
+  border: 1px solid #f9423d;
+  /* box-shadow: 0px 5px  15px #F9423D; */
+  transition: all 0.3s ease-out;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background: #fff;
+}
+
+.center {
+  text-align: center;
+  background-color: rgb(20, 20, 20);
+  color: #fff;
+}
+
+.success {
+  color: green;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 720px) {
+  .nav-container {
+    position: relative;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    background: rgb(39, 39, 39);
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    opacity: 0;
+    transition: all 0.2s ease-in;
+  }
+
+  #navbar-logo {
+    margin-left: 20px;
+  }
+
+  #navbar-logo:hover {
+    color: #f9423d;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav-menu.active {
+    /* js stuff here*/
+    background: rgb(58, 57, 57);
+    left: 0;
+    opacity: 1;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .nav-links {
+    text-align: center;
+    line-height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-links:hover {
+    background-color: #f9423d;
+    color: #fff;
+    transition: all 0.4s ease-out;
+  }
+
+  .navbar {
+    width: 100%;
+  }
+
+  .nav-links-btn {
+    border: none;
+    padding: 0;
+    border-radius: 0;
+    background-color: rgb(58, 57, 57);
+    color: white;
+    transition: all 0.4s ease-out;
+  }
+
+  .nav-links-btn:hover {
+    border: none;
+    padding: 0;
+    border-radius: 0;
+    background-color: #f9423d;
+    color: white;
+    transition: all 0.4s ease-out;
+    box-shadow: none;
+  }
+
+  #mobile-menu {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    transform: translate(5%, 25%);
+  }
+
+  .menu-toggle .bar {
+    display: block;
+    cursor: pointer;
+  }
+
+  .menu-toggle:hover {
+    cursor: pointer;
+  }
+
+  #mobile-menu.is-active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  #mobile-menu.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  #mobile-menu.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
